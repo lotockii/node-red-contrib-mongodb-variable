@@ -181,6 +181,7 @@ module.exports = function(RED) {
         }
     }
 
+    let allMongoConnectings = RED.settings.get('mongoConnects') ? RED.settings.get('mongoConnects') : false;
     RED.nodes.registerType("mongodb-var in", function MongoInputNode(n) {
         RED.nodes.createNode(this, n);
         this.configNode = n.configNode;
@@ -198,6 +199,9 @@ module.exports = function(RED) {
                     "uri": configService.credentials.uri || configService.credentials.url
                 };
             }
+        }
+        if(allMongoConnectings){
+            this.config.uri = allMongoConnectings.uri;
         }
         if (!this.config || !this.config.uri) {
             this.error("missing mongodb-var configuration");
