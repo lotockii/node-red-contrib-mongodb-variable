@@ -10,7 +10,7 @@ Run the following command in the root directory of your Node-RED install
 
     npm install node-red-contrib-mongodb-variable
 
- MongoDB node driver 3.0 interface for Node-RED
+ MongoDB node driver 3.1.13 interface for Node-RED
  based on [node-red-bluemix-nodes](https://github.com/node-red/node-red-bluemix-nodes/tree/master/mongo) and [MongoDB 3 Driver](http://mongodb.github.io/node-mongodb-native/3.0)
  Please refer to the [mongoDB node driver 'Collection' documentation](http://mongodb.github.io/node-mongodb-native/3.0/api/Collection.html) to read about each operation.
 
