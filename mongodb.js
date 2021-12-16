@@ -147,7 +147,7 @@ module.exports = function(RED) {
             mongoPool['#' + config.deploymentId] = poolCell = {
                 "instances": 0,
                 // es6-promise. A client will be called only once.
-                "promise": mongodb.MongoClient.connect(config.uri, config.options || {}).then(function(client) {
+                "promise": mongodb.MongoClient.connect(config.uri, config.options || {useNewUrlParser: true, useUnifiedTopology: true}).then(function(client) {
                     const dbName = decodeURIComponent((config.uri.match(/^.*\/([^?]*)\??.*$/) || [])[1] || '');
                     const db = client.db(dbName);
                     return {
